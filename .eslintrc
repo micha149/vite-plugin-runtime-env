@@ -1,0 +1,6 @@
+{
+    "extends": ["brainbits-typescript"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}

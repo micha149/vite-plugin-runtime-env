@@ -1,0 +1,40 @@
+{
+  "name": "vite-plugin-runtime-env",
+  "version": "0.1.0",
+  "description": "Vite plugin to make environment variables configurable from the actual environent",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format cjs,esm --clean ",
+    "watch": "tsup src/index.ts --dts --format cjs,esm --watch",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael van Engelshoven <michael@van-engelshoven.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@types/node": "^18.11.18",
+    "eslint-config-brainbits-typescript": "^4.1.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "vite": "*"
+  },
+  "dependencies": {
+    "magic-string": "^0.27.0"
+  }
+}
