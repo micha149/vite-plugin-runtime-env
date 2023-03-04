@@ -1,7 +1,12 @@
 {
   "name": "vite-plugin-runtime-env",
   "version": "0.1.0",
-  "description": "Vite plugin to make environment variables configurable from the actual environent",
+  "description": "Vite plugin which enables you to configure your environment variables when deploying your app.",
+  "keywords": ["docker", "environment", "12-factor", "vite", "dot-env", "vite-plugin"],
+  "repository": "https://github.com/micha149/vite-plugin-runtime-env",
+  "bugs": {
+    "url": "https://github.com/micha149/vite-plugin-runtime-env/issues"
+  },
   "files": [
     "dist"
   ],
