@@ -24,6 +24,7 @@
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm --clean ",
     "watch": "tsup src/index.ts --dts --format cjs,esm --watch",
+    "release": "npm run build && npx changeset publish",
     "lint": "eslint src",
     "test": "vitest run"
   },
