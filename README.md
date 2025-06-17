@@ -26,7 +26,7 @@ export default defineConfig({
 });
 ```
 
-When building your app, the plugin replaces all occurences of `import.meta.env.VITE_MY_VARIABLE` with somethink like `window.env.VITE_MY_VARIABLE` and inserts a mapping into `index.html`.
+When building your app, the plugin replaces all occurences of `import.meta.env.VITE_MY_VARIABLE` with something like `window.env.VITE_MY_VARIABLE` and inserts a mapping into `index.html`.
 The mapping contains placeholder variables like `${VITE_MY_VARIABLE}` which can be substituted using [`envsubst`][envsubst] or [`npx envsub`][envsub] when deploying your app.
 
 ```sh
@@ -55,7 +55,7 @@ import runtimeEnv from 'vite-plugin-runtime-env';
 export default defineConfig({
   plugins: [
     runtimeEnv({
-        varialbeName: 'window.myCustomEnv',
+        variableName: 'window.myCustomEnv',
     }),
   ]
 });
@@ -103,7 +103,7 @@ Now you can use a custom script using handlebars to inject the variables.
 ### `ignoreEnv`
 Variable names to be ignored by this plugin.
 They will remain in the code and will be statically replaced by Vite on build time.
-This can be useful for informations which are known on build time and not be configurable on runtime, like the version number of the current build.
+This can be useful for build time variables that should not be accesible on runtime, like the version number of the current build.
 Valid values are an array of strings, containing each variable to be ignored, or a function which gets each variable as an input and return `true` if this variable should be skipped.
 
 Example:
@@ -134,7 +134,7 @@ export default defineConfig({
 
 ## Motivation
 
-If your project want to adhere to the [12 factor principles][12factor] it can be cumbersome that Vite replaces your environment variables with static content on build time.
+If your project wants to adhere to the [12 factor principles][12factor] it can be cumbersome that Vite replaces your environment variables with static content on build time.
 Following the principle „I – Config” we want to store configurations in the environment.
 And funnily enough, this is also implied by the name „environment variable”.
 Respecting these principles can be useful when running your app in a containerized setup like Docker or Kubernetes.
