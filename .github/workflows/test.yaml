@@ -11,7 +11,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node: ["14", "16", "18"]
-        vite: ["2", "3"]
+        vite: ["2", "3", "4", "5.1", "5.2", "5"]
     name: Node.js ${{ matrix.node }} + Vite ${{ matrix.vite }} on ${{ matrix.os }}
     steps:
       - name: Checkout Repo
